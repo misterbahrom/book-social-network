@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book_social_network
+    username: postgres
+    password: Solijonov8565
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: localhost
+    port: 1025
+    username: bahrom
+    password: bahrom
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimout: 5000
+        timeout: 3000
+        writetimeout: 5000
+
+
+application:
+  security:
+    jwt:
+      secret-key: 13265489794651654984651324984654132198412321123321
+      expiration: 8640000
+  mailing:
+    frontend:
+      activation-url: http://lacalhost:4200/activate-account
+
+  file:
+    upload:
+      photos-output-path: ./uploads
+server:
+  port: 8088
